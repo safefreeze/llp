@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>safefreeze</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(-45deg, #ADFF2F, #8A2BE2);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 6s infinite alternate ease-in-out;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .container {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .gear {
+            font-size: 80px;
+            animation: spin 3s linear infinite;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .fade-in-text {
+            opacity: 0;
+            animation: textFadeIn 3s forwards 1s;
+        }
+        @keyframes textFadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .gear {
+                font-size: 60px;
+            }
+            .logo {
+                width: 150px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gear {
+                font-size: 50px;
+            }
+            .logo {
+                width: 120px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="safe.jpg" alt="Company Logo" class="logo">
+        <div class="gear">⚙️</div>
+        <h1 class="fade-in-text">Website Under Maintenance</h1>
+        <p class="fade-in-text">We are currently working on some improvements. Please check back soon!</p>
+    </div>
+</body>
+</html>
